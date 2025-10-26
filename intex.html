@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myrrin Valea | Frontend Developer</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0f0a1f;
+  --bg2:#17122b;
+  --text:#F5F3FF;
+  --muted:#bfbad9;
+  --gold:#C6A664;
+  --accent:#b892ff;
+  --card:#221a3d;
+  --shadow:rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Poppins",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:4rem 1rem 2rem;
+  background:linear-gradient(135deg,rgba(184,146,255,0.3),rgba(198,166,100,0.3));
+}
+.logo{
+  font-family:"Cinzel",serif;
+  color:var(--gold);
+  font-size:1.8rem;
+  letter-spacing:3px;
+}
+h1{margin:.3rem 0 .4rem;}
+header p{color:var(--muted);margin-bottom:1.2rem;}
+nav a{
+  display:inline-block;
+  margin:0 .5rem;
+  padding:.6rem 1rem;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  border-radius:10px;
+  transition:background .25s,transform .2s;
+}
+nav a:hover{
+  background:rgba(255,255,255,.1);
+  transform:translateY(-2px);
+}
+
+/* SECTIONS */
+section{padding:3rem 10%;background:var(--bg2);}
+section h2{margin-bottom:1rem;color:var(--gold);font-size:1.8rem;}
+section p{color:var(--muted);}
+
+/* PROJECT CARDS */
+.project{
+  background:var(--card);
+  margin:1.2rem 0;
+  padding:1.3rem 1.5rem;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.05);
+  box-shadow:0 12px 30px var(--shadow);
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+}
+.project:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px var(--shadow);
+  border-color:rgba(198,166,100,.35);
+}
+.project h3{color:var(--accent);margin-bottom:.5rem;}
+.actions{
+  margin-top:.9rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+}
+.btn{
+  padding:.55rem .9rem;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .2s,box-shadow .25s,background .25s,color .25s,border-color .25s;
+}
+.btn-primary{
+  background:var(--gold);
+  color:#1b1b1b;
+  box-shadow:0 8px 22px var(--shadow);
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 36px var(--shadow);
+}
+.btn-ghost{
+  border:1px solid rgba(255,255,255,.2);
+  color:var(--text);
+}
+.btn-ghost:hover{
+  border-color:rgba(198,166,100,.45);
+  color:var(--gold);
+  transform:translateY(-2px);
+}
+
+/* CONTACT */
+#contact a{color:var(--gold);text-decoration:none;}
+#contact a:hover{text-decoration:underline;}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:1.4rem;
+  background:linear-gradient(90deg,#1a1230,#241a3d);
+  color:var(--muted);
+  font-size:.9rem;
+}
+footer .socials{margin-top:.6rem;}
+footer .socials a{
+  color:var(--muted);
+  margin:0 .75rem;
+  text-decoration:none;
+  font-weight:600;
+}
+footer .socials a:hover{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MV</div>
+  <h1>Myrrin Valea</h1>
+  <p>Frontend Developer & Creative Designer</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hello, I'm Myrrin — a passionate frontend developer and creative designer.
+  I craft elegant, responsive, and user-friendly websites blending code and art. I love turning ideas into visually captivating digital experiences.</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>Café Aether</h3>
+    <p>Elegant restaurant landing page built with HTML, CSS, and subtle animations.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">View Project →</a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Design Stories</h3>
+    <p>Minimal blog concept created to showcase design case studies and storytelling layouts.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">View Project →</a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Portfolio UI</h3>
+    <p>A responsive and modern portfolio template built with HTML, CSS and JavaScript.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">View Project →</a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Let’s connect! You can reach me at <a href="mailto:myrrinvalea.design@gmail.com">myrrinvalea.design@gmail.com</a> or find me on my social links below.</p>
+</section>
+
+<footer>
+  <p>© 2025 Myrrin Valea</p>
+  <div class="socials">
+    <a href="https://github.com/myrrinvalea" target="_blank">🐙 GitHub</a>
+    <a href="https://www.linkedin.com/in/myrrinvalea" target="_blank">💼 LinkedIn</a>
+    <a href="mailto:myrrinvalea.design@gmail.com">✉️ Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
