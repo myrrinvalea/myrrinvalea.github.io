@@ -168,21 +168,35 @@ footer .socials a:hover{color:var(--gold);}
     height: 180px;
   }
 }
+/* === LOGO GÖRSELİ === */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
 
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">MV</div>
-  <h1>Myrrin Valea</h1>
-  <p>Frontend Developer & Creative Designer</p>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="logo">
+    <img src="images/logo.png" alt="MV Logo">
+    <h1>Myrrin Valea</h1>
+  </div>
 </header>
+
 
 <section id="about">
   <h2>About Me</h2>
@@ -268,6 +282,7 @@ footer .socials a:hover{color:var(--gold);}
 
 </body>
 </html>
+
 
 
 
