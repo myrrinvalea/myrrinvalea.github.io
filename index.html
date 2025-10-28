@@ -1,361 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cotswold Trails — Travel Landing Page</title>
-  <meta name="description" content="A clean, responsive travel blog landing page for showcasing Cotswolds villages, posts, and newsletter signups." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg: #0f1220;
-      --card: #14182b;
-      --muted: #9aa3b2;
-      --text: #e6e9f2;
-      --primary: #7cc7ff;
-      --accent: #ffd166;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius-xl: 18px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:linear-gradient(180deg,#0d1020 0%,#0d1020 40%,#0f1530 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block;border-radius:14px}
-    .container{width:min(1120px,92vw);margin:0 auto}
-    /* Nav */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(13,16,32,.6);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800}
-    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#81e6d9,#7cc7ff)}
-    .nav-actions{display:flex;gap:10px;align-items:center}
-    .btn{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);cursor:pointer;color:var(--text);font-weight:600}
-    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
-    .btn.primary{background:linear-gradient(135deg,#7cc7ff,#81e6d9);color:#0b1020;border:none}
-    .btn.ghost{background:transparent}
-    .lang-toggle{display:inline-flex;gap:8px;align-items:center}
-    /* Rentals bar */
-    .rentals{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.06)}
-    .rentals-inner{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:14px 0}
-    .chip{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-size:12px;color:var(--muted);cursor:pointer;user-select:none}
-    .chip.active{outline:2px solid var(--primary);color:#cfe9ff}
-    .chip input{display:none}
-    .input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:var(--text)}
-    .spacer{flex:1}
-    /* Hero */
-    .hero{position:relative;isolation:isolate}
-    .hero-media{position:absolute;inset:0;z-index:-1;}
-    .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,22,.65) 0%,rgba(7,10,22,.75) 50%,rgba(7,10,22,.92) 100%)}
-    .hero-media img{width:100%;height:560px;object-fit:cover;object-position:center}
-    .hero-inner{padding:86px 0 120px}
-    .kicker{letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;font-size:12px}
-    .title{font-size:48px;line-height:1.06;margin:14px 0 10px}
-    .subtitle{color:var(--muted);max-width:720px;font-size:18px}
-    .hero-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-    /* Section */
-    section{padding:70px 0}
-    .section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
-    h2{font-size:28px;margin:0}
-    p.lead{color:var(--muted);margin:6px 0 0}
-    /* Destinations grid */
-    .grid{display:grid;gap:18px}
-    @media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:1024px){.grid{grid-template-columns:repeat(4,1fr)}}
-    .card{background:linear-gradient(180deg,#151a31,#12162a);border:1px solid rgba(255,255,255,.06);padding:14px;border-radius:var(--radius-xl);box-shadow:var(--shadow);transition:transform .2s ease}
-    .card:hover{transform:translateY(-3px)}
-    .card h3{font-size:16px;margin:10px 0 6px}
-    .meta{font-size:12px;color:var(--muted);margin-bottom:10px}
-    .card-actions{display:flex;gap:8px;flex-wrap:wrap}
-    .btn.sm{padding:8px 10px;font-size:12px}
-    /* Posts */
-    .posts{display:grid;gap:18px}
-    @media(min-width:900px){.posts{grid-template-columns:1.2fr 1fr}}
-    .post{background:linear-gradient(180deg,#151a31,#12162a);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow)}
-    .post .content{padding:16px}
-    .post h3{margin:6px 0 8px}
-    .post p{color:var(--muted)}
-    /* Newsletter */
-    .newsletter{display:grid;gap:16px;grid-template-columns:1.6fr .8fr;align-items:center;background:linear-gradient(135deg,rgba(124,199,255,.1),rgba(129,230,217,.1));border:1px solid rgba(255,255,255,.08);padding:24px;border-radius:var(--radius-xl)}
-    @media(max-width:800px){.newsletter{grid-template-columns:1fr}}
-    /* Footer */
-    footer{padding:40px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myrrin Valea | Frontend Developer</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0f0a1f;
+  --bg2:#17122b;
+  --text:#F5F3FF;
+  --muted:#bfbad9;
+  --gold:#C6A664;
+  --accent:#b892ff;
+  --card:#221a3d;
+  --shadow:rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Poppins",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:4rem 1rem 2rem;
+  background:linear-gradient(135deg,rgba(184,146,255,0.3),rgba(198,166,100,0.3));
+}
+.logo{
+  font-family:"Cinzel",serif;
+  color:var(--gold);
+  font-size:1.8rem;
+  letter-spacing:3px;
+}
+h1{margin:.3rem 0 .4rem;}
+header p{color:var(--muted);margin-bottom:1.2rem;}
+nav a{
+  display:inline-block;
+  margin:0 .5rem;
+  padding:.6rem 1rem;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  border-radius:10px;
+  transition:background .25s,transform .2s;
+}
+nav a:hover{
+  background:rgba(255,255,255,.1);
+  transform:translateY(-2px);
+}
+
+/* SECTIONS */
+section{padding:3rem 10%;background:var(--bg2);}
+section h2{margin-bottom:1rem;color:var(--gold);font-size:1.8rem;}
+section p{color:var(--muted);}
+
+/* PROJECT CARDS */
+.project{
+  background:var(--card);
+  margin:1.2rem 0;
+  padding:1.3rem 1.5rem;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.05);
+  box-shadow:0 12px 30px var(--shadow);
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+}
+.project:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px var(--shadow);
+  border-color:rgba(198,166,100,.35);
+}
+.project h3{color:var(--accent);margin-bottom:.5rem;}
+.actions{
+  margin-top:.9rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+}
+.btn{
+  padding:.55rem .9rem;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .2s,box-shadow .25s,background .25s,color .25s,border-color .25s;
+}
+.btn-primary{
+  background:var(--gold);
+  color:#1b1b1b;
+  box-shadow:0 8px 22px var(--shadow);
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 36px var(--shadow);
+}
+.btn-ghost{
+  border:1px solid rgba(255,255,255,.2);
+  color:var(--text);
+}
+.btn-ghost:hover{
+  border-color:rgba(198,166,100,.45);
+  color:var(--gold);
+  transform:translateY(-2px);
+}
+
+/* CONTACT */
+#contact a{color:var(--gold);text-decoration:none;}
+#contact a:hover{text-decoration:underline;}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:1.4rem;
+  background:linear-gradient(90deg,#1a1230,#241a3d);
+  color:var(--muted);
+  font-size:.9rem;
+}
+footer .socials{margin-top:.6rem;}
+footer .socials a{
+  color:var(--muted);
+  margin:0 .75rem;
+  text-decoration:none;
+  font-weight:600;
+}
+footer .socials a:hover{color:var(--gold);}
+  /* ----- Projects Bölümü ----- */
+.project {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 16px;
+  margin: 18px 0;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+}
+.project-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.thumb {
+  width: 100%;
+  height: 150px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .35);
+}
+.details h3 {
+  margin: .2rem 0 .4rem;
+}
+.project-active:hover {
+  border-color: rgba(198, 166, 100, .4);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .35);
+}
+@media (max-width: 900px) {
+  .project-inner {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    height: 180px;
+  }
+}
+/* === LOGO GÖRSELİ === */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand"><span class="dot"></span><span data-i18n="brand">Cotswold Trails</span></div>
-      <div class="nav-actions">
-        <button class="btn ghost" data-scroll="#destinations" data-i18n="nav.explore">Explore</button>
-        <button class="btn" id="langBtn" aria-label="Change language">EN / TR</button>
-        <a href="#newsletter" class="btn primary" data-i18n="nav.subscribe">Subscribe</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Rentals quick search -->
-  <div class="rentals">
-    <div class="container rentals-inner">
-      <strong>Find rentals:</strong>
-      <label class="chip"><input type="checkbox" data-filter="ensuite"/>Ensuite</label>
-      <label class="chip"><input type="checkbox" data-filter="studio"/>Studio</label>
-      <label class="chip"><input type="checkbox" data-filter="room"/>Room</label>
-      <label class="chip"><input type="checkbox" data-filter="budget" data-value="<700"/>&lt; £700</label>
-      <label class="chip"><input type="checkbox" data-filter="budget" data-value="700-1000"/>£700–1000</label>
-      <label class="chip"><input type="checkbox" data-filter="budget" data-value=">1000"/>&gt; £1000</label>
-      <div class="spacer"></div>
-      <select id="area" class="input" style="max-width:220px">
-        <option value="Cheltenham">Cheltenham</option>
-        <option value="Stow-on-the-Wold">Stow-on-the-Wold</option>
-        <option value="Bourton-on-the-Water">Bourton-on-the-Water</option>
-        <option value="Bibury">Bibury</option>
-        <option value="Broadway">Broadway</option>
-      </select>
-      <button id="rentSearch" class="btn primary btn-sm">Search</button>
-    </div>
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="MV Logo">
+    <h1>Myrrin Valea</h1>
   </div>
+</header>
 
-  <header class="hero">
-    <div class="hero-media">
-     <img
-  src="https://images.unsplash.com/photo-1542172192-1f71a7343a11?q=80&w=2000&auto=format&fit=crop"
-  alt="Cotswold hills"
-  loading="eager"
-  onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/64/Broadway_Tower%2C_Cotswolds.jpg'; this.onerror=null;"
-/>
-    </div>
-    <div class="container hero-inner">
-      <div class="kicker" data-i18n="hero.kicker">Slow Travel • UK Villages</div>
-      <h1 class="title" data-i18n="hero.title">Find your quiet corner in the Cotswolds</h1>
-      <p class="subtitle" data-i18n="hero.subtitle">Handpicked villages, walking routes, cozy cafés, and rental tips curated for dreamers who love stone cottages and misty mornings.</p>
-      <div class="hero-cta">
-        <a class="btn primary" href="#destinations" data-i18n="hero.cta1">Browse Destinations</a>
-        <a class="btn" href="#posts" data-i18n="hero.cta2">Read Latest Posts</a>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <section id="destinations" class="container">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="dest.title">Featured Villages</h2>
-          <p class="lead" data-i18n="dest.lead">A few gems to start your list.</p>
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hello, I'm Myrrin — a passionate frontend developer and creative designer.
+  I craft elegant, responsive, and user-friendly websites blending code and art. I love turning ideas into visually captivating digital experiences.</p>
+</section>
+
+<section id="projects" class="reveal">
+  <h2>Projects</h2>
+
+  <!-- Café Aether -->
+  <div class="project project-active">
+    <div class="project-inner">
+      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1400&auto=format&fit=crop');"></div>
+      <div class="details">
+        <h3>Café Aether</h3>
+        <p>Elegant restaurant landing page built with HTML, CSS, and subtle animations.</p>
+        <div class="project">
+  <h3>Freelancer Studio</h3>
+  <p>Clean and modern web studio design.</p>
+  <a class="btn btn-primary"
+     href="https://myrrinvalea.github.io/freelancer-studio/"
+     target="_blank" rel="noopener">View Project →</a>
+</div>
+
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="https://myrrinvalea.github.io/cafe-aether/"
+             target="_blank" rel="noopener">View Project →</a>
+          <a class="btn btn-ghost"
+             href="https://github.com/myrrinvalea/cafe-aether"
+             target="_blank" rel="noopener">View Code</a>
         </div>
-        <span class="chip">🌤️ <span data-i18n="dest.season">Best in late spring</span></span>
       </div>
-      <div class="grid">
-       <article class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Bridge_over_River_Windrush%2C_Bourton-on-the-Water%2C_Gloucestershire_-_geograph.org.uk_-_3511734.jpg"
-     alt="Bourton-on-the-Water — River Windrush köprüsü" loading="lazy">
-  <h3>Bourton-on-the-Water</h3>
-  <div class="meta">Riverside walks • stone bridges • tea rooms</div>
-  <div class="card-actions">
-    <a class="btn sm" href="https://www.google.com/maps?q=Bourton-on-the-Water" target="_blank">🗺️ Map</a>
-    <a class="btn sm" href="https://www.google.com/maps/dir//Bourton-on-the-Water" target="_blank">🧭 Route</a>
-  </div>
-</article>
-
-<article class="card">
- <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Arlington_Row_Bibury.jpg"
-     alt="Bibury — Arlington Row" loading="lazy">
-  <h3>Bibury</h3>
-  <div class="meta">Arlington Row • dawn photography • trout farm</div>
-  <div class="card-actions">
-    <a class="btn sm" href="https://www.google.com/maps?q=Bibury+Arlington+Row" target="_blank">🗺️ Map</a>
-    <a class="btn sm" href="https://www.google.com/maps/dir//Arlington+Row,+Bibury" target="_blank">🧭 Route</a>
-  </div>
-</article>
-
-<article class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/St_Edwards_Church_-_Stow_on_th_Wold.jpg"
-     alt="Stow-on-the-Wold — St Edward’s Church kapısı" loading="lazy">
-  <h3>Stow-on-the-Wold</h3>
-  <div class="meta">Bookshops • market square • antique hunting</div>
-  <div class="card-actions">
-    <a class="btn sm" href="https://www.google.com/maps?q=St+Edward's+Church+Stow-on-the-Wold" target="_blank">🗺️ Map</a>
-    <a class="btn sm" href="https://www.google.com/maps/dir//St+Edward's+Church,+Stow-on-the-Wold" target="_blank">🧭 Route</a>
-  </div>
-</article>
-
-<article class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Broadway_Tower%2C_Cotswolds.jpg"
-     alt="Broadway Tower" loading="lazy">
-  <h3>Broadway & Tower</h3>
-  <div class="meta">Hill views • sunset picnics • walking trails</div>
-  <div class="card-actions">
-    <a class="btn sm" href="https://www.google.com/maps?q=Broadway+Tower+Cotswolds" target="_blank">🗺️ Map</a>
-    <a class="btn sm" href="https://www.google.com/maps/dir//Broadway+Tower" target="_blank">🧭 Route</a>
-  </div>
-</article>
-
-      </div>
-    </section>
-<section id="posts" class="container">
-  <div class="section-head">
-    <div>
-      <h2 data-i18n="posts.title">Latest Posts</h2>
-      <p class="lead" data-i18n="posts.lead">Itineraries, rentals, and café maps.</p>
     </div>
   </div>
-  <div class="posts">
-    <article class="post">
-     <img 
-  src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Arlington_Row_Bibury.jpg"
-  alt="Arlington Row, Bibury"
-  style="width:100%; height:400px; object-fit:cover; border-radius:14px;"
-  loading="eager"
-/>
-           onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/3f/Arlington_Row_-_geograph.org.uk_-_1083752.jpg'; this.onerror=function(){ this.src='https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1200&auto=format&fit=crop'; };"/>
-      <div class="content">
-        <h3 data-i18n="posts.p1.title">3-Day Cotswolds Itinerary (without a car)</h3>
-        <p data-i18n="posts.p1.body">Base in Stow, hop buses to Bourton and Bibury, and end with a golden-hour walk near Broadway Tower.</p>
-        <div class="meta">⏱️ 6 min • 🧭 Itinerary</div>
+
+  <!-- Design Stories -->
+  <div class="project">
+    <div class="project-inner">
+      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1400&auto=format&fit=crop');"></div>
+      <div class="details">
+        <h3>Design Stories</h3>
+        <p>Minimal blog concept created to showcase design case studies and storytelling layouts.</p>
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="https://myrrinvalea.github.io/design-stories/"
+             target="_blank" rel="noopener">View Project →</a>
+          <a class="btn btn-ghost"
+             href="https://github.com/myrrinvalea/design-stories"
+             target="_blank" rel="noopener">View Code</a>
+        </div>
       </div>
-    </article>
-    <article class="post">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Broadway_Tower%2C_Cotswolds.jpg" alt="Broadway Tower at sunset" loading="lazy" />
-      <div class="content">
-        <h3 data-i18n="posts.p2.title">How to pick a rental with a view (UK village edition)</h3>
-        <p data-i18n="posts.p2.body">What to look for in listings: south-facing windows, elevation, and field-side lanes for quiet mornings.</p>
-        <div class="meta">⏱️ 4 min • 🏡 Rentals</div>
+    </div>
+  </div>
+
+  <!-- Portfolio UI -->
+  <div class="project">
+    <div class="project-inner">
+      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop');"></div>
+      <div class="details">
+        <h3>Portfolio UI</h3>
+        <p>A responsive and modern portfolio template built with HTML, CSS and JavaScript.</p>
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="https://myrrinvalea.github.io/portfolio-ui/"
+             target="_blank" rel="noopener">View Project →</a>
+          <a class="btn btn-ghost"
+             href="https://github.com/myrrinvalea/portfolio-ui"
+             target="_blank" rel="noopener">View Code</a>
+        </div>
       </div>
-    </article>
+    </div>
   </div>
 </section>
 
 
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Let’s connect! You can reach me at <a href="mailto:myrrinvalea.design@gmail.com">myrrinvalea.design@gmail.com</a> or find me on my social links below.</p>
+</section>
+<section id="projects" style="padding:60px 0; text-align:center; background:#faf7f4;">
+  <h2 style="font-family:'Playfair Display',serif; font-size:36px; margin-bottom:20px;">Portfolyo Projeleri</h2>
+  <p style="color:#666; margin-bottom:30px;">Aşağıda son yaptığım projelerden birini görebilirsiniz 👇</p>
+  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+    <a href="luna-glow-elegant-tr.html" class="btn" style="padding:14px 24px; background:#111; color:white; border-radius:10px; text-decoration:none;">Luna Glow (TR)</a>
+    <a href="luna-glow-elegant-en.html" class="btn" style="padding:14px 24px; background:#fff; color:#111; border:1px solid #ccc; border-radius:10px; text-decoration:none;">Luna Glow (EN)</a>
+  </div>
+</section>
 
-    <section id="newsletter" class="container">
-      <div class="newsletter">
-        <div>
-          <h2 data-i18n="news.title">Get the cozy guide</h2>
-          <p class="lead" data-i18n="news.lead">Monthly email with routes, cafés, and photospots. No spam, just slow travel.</p>
-          <p class="note" data-i18n="news.note">You can unsubscribe at any time.</p>
-        </div>
-        <form action="https://formspree.io/f/your-id-here" method="POST">
-          <input class="input" type="email" name="email" placeholder="Email address" required>
-          <button class="btn primary" type="submit" style="margin-top:10px" data-i18n="news.cta">Subscribe</button>
-        </form>
-      </div>
-    </section>
-  </main>
+<footer>
+  <p>© 2025 Myrrin Valea</p>
+  <div class="socials">
+    <a href="https://github.com/myrrinvalea" target="_blank">🐙 GitHub</a>
+    <a href="https://www.linkedin.com/in/myrrinvalea" target="_blank">💼 LinkedIn</a>
+    <a href="mailto:myrrinvalea.design@gmail.com">✉️ Email</a>
+  </div>
+</footer>
 
-  <footer>
-    <div class="container">© <span id="year"></span> <span data-i18n="brand">Cotswold Trails</span> · <span data-i18n="foot">Built as a demo landing page by Myrrin Valea</span></div>
-  </footer>
-
-  <script>
-    // Simple smooth scroll
-    document.querySelectorAll('[data-scroll]').forEach(el=>{
-      el.addEventListener('click', e=>{
-        const id = el.getAttribute('data-scroll');
-        const target = document.querySelector(id);
-        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
-      })
-    })
-
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // i18n
-    const dict = {
-      en: {
-        brand: "Cotswold Trails",
-        'nav.explore': 'Explore',
-        'nav.subscribe': 'Subscribe',
-        'hero.kicker': 'Slow Travel • UK Villages',
-        'hero.title': 'Find your quiet corner in the Cotswolds',
-        'hero.subtitle': 'Handpicked villages, walking routes, cozy cafés, and rental tips curated for dreamers who love stone cottages and misty mornings.',
-        'hero.cta1': 'Browse Destinations',
-        'hero.cta2': 'Read Latest Posts',
-        'dest.title': 'Featured Villages',
-        'dest.lead': 'A few gems to start your list.',
-        'dest.season': 'Best in late spring',
-        'dest.meta1': 'Riverside walks • stone bridges • tea rooms',
-        'dest.meta2': 'Arlington Row • dawn photography • trout farm',
-        'dest.meta3': 'Bookshops • market square • antique hunting',
-        'dest.meta4': 'Hill views • sunset picnics • walking trails',
-        'posts.title': 'Latest Posts',
-        'posts.lead': 'Itineraries, rentals, and café maps.',
-        'posts.p1.title': '3-Day Cotswolds Itinerary (without a car)',
-        'posts.p1.body': 'Base in Stow, hop buses to Bourton and Bibury, and end with a golden-hour walk near Broadway Tower.',
-        'posts.p2.title': 'How to pick a rental with a view (UK village edition)',
-        'posts.p2.body': 'What to look for in listings: south-facing windows, elevation, and field-side lanes for quiet mornings.',
-        'news.title': 'Get the cozy guide',
-        'news.lead': 'Monthly email with routes, cafés, and photospots. No spam, just slow travel.',
-        'news.note': 'You can unsubscribe at any time.',
-        'news.cta': 'Subscribe',
-        'foot': 'Built as a demo landing page by Myrrin Valea'
-      },
-      tr: {
-        brand: "Cotswold Trails",
-        'nav.explore': 'Keşfet',
-        'nav.subscribe': 'Abone Ol',
-        'hero.kicker': 'Yavaş Seyahat • İngiltere Köyleri',
-        'hero.title': 'Cotswolds’da sessiz köşeni bul',
-        'hero.subtitle': 'Taş evleri ve sisli sabahları sevenler için seçilmiş köyler, yürüyüş rotaları, sıcak kafeler ve kiralık ev ipuçları.',
-        'hero.cta1': 'Bölgeleri İncele',
-        'hero.cta2': 'Son Yazılar',
-        'dest.title': 'Öne Çıkan Köyler',
-        'dest.lead': 'Listeye başlamak için birkaç mücevher.',
-        'dest.season': 'En iyi geç ilkbaharda',
-        'dest.meta1': 'Nehir kenarı yürüyüşleri • taş köprüler • çay odaları',
-        'dest.meta2': 'Arlington Row • şafak fotoğrafları • alabalık çiftliği',
-        'dest.meta3': 'Sahaflar • pazar meydanı • antika avı',
-        'dest.meta4': 'Tepeler • gün batımı piknikleri • yürüyüş rotaları',
-        'posts.title': 'Son Yazılar',
-        'posts.lead': 'Rotalar, kiralık evler ve kafe haritaları.',
-        'posts.p1.title': 'Arabası olmayanlar için 3 günlük Cotswolds planı',
-        'posts.p1.body': 'Stow’da konakla, Bourton ve Bibury’e otobüsle geç, gün batımında Broadway Tower çevresinde yürü.',
-        'posts.p2.title': 'Manzaralı kiralık nasıl seçilir? (Köy rehberi)',
-        'posts.p2.body': 'İlanlarda bakılacaklar: güneye bakan pencereler, yükseklik ve tarlaya bakan sessiz yollar.',
-        'news.title': 'Sıcacık rehber posta kutunda',
-        'news.lead': 'Her ay rota, kafe ve fotoğraf noktaları. Spam yok; sadece yavaş seyahat.',
-        'news.note': 'İstediğin an abonelikten çıkabilirsin.',
-        'news.cta': 'Abone Ol',
-        'foot': 'Myrrin Valea tarafından demo amaçlı oluşturuldu'
-      }
-    };
-
-    const langBtn = document.getElementById('langBtn');
-    let lang = 'en';
-
-    function applyI18n(){
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const key = el.getAttribute('data-i18n');
-        const t = (dict[lang] && dict[lang][key]) || '';
-        if(t) el.textContent = t;
-      })
-    }
-
-    langBtn.addEventListener('click', ()=>{
-      lang = (lang === 'en') ? 'tr' : 'en';
-      applyI18n();
-    });
-
-    // initial
-    applyI18n();
-
-    // Rentals chips & external search (demo)
-    document.querySelectorAll('.chip').forEach(ch=>{
-      ch.addEventListener('click', ()=>{
-        const input = ch.querySelector('input');
-        input.checked = !input.checked;
-        ch.classList.toggle('active', input.checked);
-      });
-    });
-
-    document.getElementById('rentSearch').addEventListener('click', ()=>{
-      const area = encodeURIComponent(document.getElementById('area').value);
-      const tags = Array.from(document.querySelectorAll('.chip input:checked')).map(i=>i.dataset.filter+ (i.dataset.value? ':'+i.dataset.value:''));
-      const q = encodeURIComponent(tags.join(' '));
-      // SpareRoom search fallback via Google query for simplicity
-      const url = `https://www.google.com/search?q=site:spareroom.co.uk+${area}+${q}+room+to+rent`;
-      window.open(url, '_blank');
-    });
-  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
