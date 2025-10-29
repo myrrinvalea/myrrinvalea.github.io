@@ -109,6 +109,109 @@ section p{color:var(--muted);}
   color:var(--gold);
   transform:translateY(-2px);
 }
+  /* Contact button style */
+.contact-btn {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.contact-btn .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #8b7add; /* uyumlu mor ton */
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(139, 122, 221, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-btn .btn:hover {
+  background-color: #6e5dd4; /* hover rengi */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(110, 93, 212, 0.4);
+}
+.availability-note {
+  text-align: center;
+  font-style: italic;
+  color: #777; /* yumuşak gri */
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+/* ====== SECTION LAYOUT OPTIMIZATION ====== */
+
+/* Genel bölüm boşlukları */
+section {
+  padding: 60px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Başlıklar */
+section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #4b3ea3; /* yumuşak mor tonu */
+  margin-bottom: 20px;
+}
+
+/* Paragraflar */
+section p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* "About" ve "Current Focus" arasında düzgün boşluk */
+#about {
+  margin-bottom: 30px;
+}
+
+#current-focus {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Contact butonuna özel hizalama */
+.contact-btn {
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* Availability notu */
+.availability-note {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+/* ====== SCROLL ANIMATION (fade-in effect) ====== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Delay efektleri - bölümler sırayla belirsin */
+.reveal:nth-of-type(1) {
+  transition-delay: 0.1s;
+}
+.reveal:nth-of-type(2) {
+  transition-delay: 0.3s;
+}
+.reveal:nth-of-type(3) {
+  transition-delay: 0.5s;
+}
+
 
 /* CONTACT */
 #contact a{color:var(--gold);text-decoration:none;}
@@ -213,8 +316,21 @@ footer .socials a:hover{color:var(--gold);}
     to expand my freelance portfolio. My goal is to deliver visually engaging,
     accessible, and high-performing websites that bring ideas to life.
   </p>
+   <!-- 🔹 Buton buraya gelecek -->
+  <div class="contact-btn">
+    <a href="https://formspree.io/f/xgvpoybq" target="_blank" class="btn">
+      🤝 Contact for Collaboration
+    </a>
+  </div>
+   <div class="contact-btn">
+    <a href="https://formspree.io/f/xgvpoybq" target="_blank" class="btn">
+      🤝 Contact for Collaboration
+    </a>
+  </div>
+  <p class="availability-note">
+    *Available for freelance projects worldwide.*
+  </p>
 </section>
-
 
 <section id="projects" class="reveal">
   <h2>Projects</h2>
@@ -320,9 +436,30 @@ footer .socials a:hover{color:var(--gold);}
     <a href="mailto:myrrinvalea.design@gmail.com">✉️ Email</a>
   </div>
 </footer>
+<script>
+  // fade-in effect on scroll
+  window.addEventListener("scroll", reveal);
+
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var revealTop = reveals[i].getBoundingClientRect().top;
+      var revealPoint = 120;
+
+      if (revealTop < windowHeight - revealPoint) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+</script>
 
 </body>
 </html>
+
 
 
 
