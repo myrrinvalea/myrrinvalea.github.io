@@ -109,109 +109,6 @@ section p{color:var(--muted);}
   color:var(--gold);
   transform:translateY(-2px);
 }
-  /* Contact button style */
-.contact-btn {
-  text-align: center;
-  margin-top: 24px;
-}
-
-.contact-btn .btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background-color: #8b7add; /* uyumlu mor ton */
-  color: #fff;
-  font-weight: 600;
-  border-radius: 10px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(139, 122, 221, 0.3);
-  transition: all 0.3s ease;
-}
-
-.contact-btn .btn:hover {
-  background-color: #6e5dd4; /* hover rengi */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(110, 93, 212, 0.4);
-}
-.availability-note {
-  text-align: center;
-  font-style: italic;
-  color: #777; /* yumuşak gri */
-  margin-top: 10px;
-  font-size: 0.95rem;
-}
-/* ====== SECTION LAYOUT OPTIMIZATION ====== */
-
-/* Genel bölüm boşlukları */
-section {
-  padding: 60px 0;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* Başlıklar */
-section h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  color: #4b3ea3; /* yumuşak mor tonu */
-  margin-bottom: 20px;
-}
-
-/* Paragraflar */
-section p {
-  line-height: 1.7;
-  font-size: 1.05rem;
-  color: #333;
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-/* "About" ve "Current Focus" arasında düzgün boşluk */
-#about {
-  margin-bottom: 30px;
-}
-
-#current-focus {
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-/* Contact butonuna özel hizalama */
-.contact-btn {
-  text-align: center;
-  margin-top: 24px;
-}
-
-/* Availability notu */
-.availability-note {
-  text-align: center;
-  font-style: italic;
-  color: #777;
-  margin-top: 10px;
-  font-size: 0.95rem;
-}
-/* ====== SCROLL ANIMATION (fade-in effect) ====== */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Delay efektleri - bölümler sırayla belirsin */
-.reveal:nth-of-type(1) {
-  transition-delay: 0.1s;
-}
-.reveal:nth-of-type(2) {
-  transition-delay: 0.3s;
-}
-.reveal:nth-of-type(3) {
-  transition-delay: 0.5s;
-}
-
 
 /* CONTACT */
 #contact a{color:var(--gold);text-decoration:none;}
@@ -316,21 +213,8 @@ footer .socials a:hover{color:var(--gold);}
     to expand my freelance portfolio. My goal is to deliver visually engaging,
     accessible, and high-performing websites that bring ideas to life.
   </p>
-   <!-- 🔹 Buton buraya gelecek -->
-  <div class="contact-btn">
-    <a href="https://formspree.io/f/xgvpoybq" target="_blank" class="btn">
-      🤝 Contact for Collaboration
-    </a>
-  </div>
-   <div class="contact-btn">
-    <a href="https://formspree.io/f/xgvpoybq" target="_blank" class="btn">
-      🤝 Contact for Collaboration
-    </a>
-  </div>
-  <p class="availability-note">
-    *Available for freelance projects worldwide.*
-  </p>
 </section>
+
 
 <section id="projects" class="reveal">
   <h2>Projects</h2>
@@ -402,21 +286,10 @@ footer .socials a:hover{color:var(--gold);}
 </section>
 
 
-<section id="contact" style="padding:60px 0; text-align:center; background:#faf7f4;">
-  <h2 style="font-family:'Playfair Display',serif; font-size:36px; margin-bottom:20px;">Contact</h2>
-  <p style="color:#666; margin-bottom:30px;">Let’s connect! Fill out the form below and I’ll get back to you soon 💌</p>
-
-  <form action="https://formspree.io/f/xgvpoybq" method="POST" style="max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:15px;">
-    <input type="text" name="name" placeholder="Your Name" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
-    <input type="email" name="email" placeholder="Your Email" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
-    <textarea name="message" placeholder="Tell me about your project..." required style="padding:12px; border-radius:8px; border:1px solid #ccc; height:120px;"></textarea>
-    <button type="submit" style="padding:12px; border:none; border-radius:8px; background:#111; color:white; font-weight:bold; cursor:pointer;">Send Message</button>
-  </form>
-  <p id="form-message" style="display:none; color:#4caf50; margin-top:15px; font-weight:500;">
-  ✅ Message sent successfully!
-</p>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Let’s connect! You can reach me at <a href="mailto:myrrinvalea.design@gmail.com">myrrinvalea.design@gmail.com</a> or find me on my social links below.</p>
 </section>
-
 <section id="projects" style="padding:60px 0; text-align:center; background:#faf7f4;">
   <h2 style="font-family:'Playfair Display',serif; font-size:36px; margin-bottom:20px;">Portfolyo Projeleri</h2>
   <p style="color:#666; margin-bottom:30px;">Aşağıda son yaptığım projelerden birini görebilirsiniz 👇</p>
@@ -437,31 +310,6 @@ footer .socials a:hover{color:var(--gold);}
      View Project →
   </a>
 </div>
-<script>
-  const form = document.getElementById("contact-form");
-  const message = document.getElementById("form-message");
-
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        message.style.display = "block";
-        form.reset();
-        setTimeout(() => { message.style.display = "none"; }, 3000);
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    }).catch(error => {
-      alert("Error: " + error.message);
-    });
-  });
-</script>
 
 
 <footer>
@@ -472,32 +320,9 @@ footer .socials a:hover{color:var(--gold);}
     <a href="mailto:myrrinvalea.design@gmail.com">✉️ Email</a>
   </div>
 </footer>
-<script>
-  // fade-in effect on scroll
-  window.addEventListener("scroll", reveal);
-
-  function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var revealTop = reveals[i].getBoundingClientRect().top;
-      var revealPoint = 120;
-
-      if (revealTop < windowHeight - revealPoint) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
-      }
-    }
-  }
-</script>
 
 </body>
 </html>
-
-
-
 
 
 
