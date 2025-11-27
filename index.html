@@ -9,6 +9,7 @@
     content="Myrrin Valea — Frontend Developer & UI/UX Designer building modern, responsive and user-focused websites."
   />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
 </head>
 <body>
   <header class="site-header">
@@ -19,7 +20,9 @@
       </div>
       <nav class="nav">
         <a href="#about">About</a>
+        <a href="#services">Services</a>
         <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -107,14 +110,59 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section section-alt">
+    <!-- SERVICES -->
+    <section id="services" class="section section-alt">
       <div class="container">
         <div class="section-header">
-          <h2>Selected Projects</h2>
+          <h2>What I Do</h2>
           <p>
-            A mix of landing pages, portfolio concepts and product demos. Each project focuses on
-            clear hierarchy, spacing and a simple user flow.
+            I help small brands, freelancers and creative studios tell their story online with
+            simple, focused and calm web experiences.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Landing Pages</h3>
+            <p>
+              Single-page websites for cafes, beauty brands, courses or services — focused on clear
+              messaging and a simple call to action.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Portfolio Websites</h3>
+            <p>
+              Minimal portfolios for designers, developers and creatives, highlighting work,
+              strengths and contact information.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Studio & Service Sites</h3>
+            <p>
+              Small “studio style” sites that explain services, process and selected work for
+              freelancers and micro-agencies.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Product Pages</h3>
+            <p>
+              Clean product pages for digital or physical products with sections for benefits,
+              features, usage and reviews.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <!-- FEATURED -->
+        <div class="section-header">
+          <h2>Featured Projects</h2>
+          <p>
+            A small selection of projects that best represent my current style and the type of work
+            I want to do more of.
           </p>
         </div>
 
@@ -132,39 +180,6 @@
                 Live Demo
               </a>
               <a href="https://github.com/myrrinvalea/cafe-aether" target="_blank" class="btn ghost small">
-                View Code
-              </a>
-            </div>
-          </article>
-
-          <!-- Freelancer Studio -->
-          <article class="project-card">
-            <h3>Freelancer Studio</h3>
-            <p class="project-type">Studio Website • HTML &amp; CSS</p>
-            <p class="project-desc">
-              Clean and modern web studio layout explaining services, selected work and a simple
-              contact flow for potential clients.
-            </p>
-            <div class="project-links">
-              <a href="https://myrrinvalea.github.io/freelancer-studio/" target="_blank" class="btn small">
-                Live Demo
-              </a>
-            </div>
-          </article>
-
-          <!-- Design Stories -->
-          <article class="project-card">
-            <h3>Design Stories</h3>
-            <p class="project-type">Minimal Blog Concept</p>
-            <p class="project-desc">
-              A minimal blog-style layout for design case studies, focusing on large typography,
-              breathing space and calm reading rhythm.
-            </p>
-            <div class="project-links">
-              <a href="https://myrrinvalea.github.io/design-stories/" target="_blank" class="btn small">
-                Live Demo
-              </a>
-              <a href="https://github.com/myrrinvalea/design-stories" target="_blank" class="btn ghost small">
                 View Code
               </a>
             </div>
@@ -188,6 +203,32 @@
             </div>
           </article>
 
+          <!-- Freelancer Studio -->
+          <article class="project-card">
+            <h3>Freelancer Studio</h3>
+            <p class="project-type">Studio Website • HTML &amp; CSS</p>
+            <p class="project-desc">
+              Clean and modern web studio layout explaining services, selected work and a simple
+              contact flow for potential clients.
+            </p>
+            <div class="project-links">
+              <a href="https://myrrinvalea.github.io/freelancer-studio/" target="_blank" class="btn small">
+                Live Demo
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- MORE PROJECTS -->
+        <div class="section-subheader">
+          <h3>More Projects</h3>
+          <p>
+            Smaller experiments and supporting pages that explore different layouts, content types
+            and UI details.
+          </p>
+        </div>
+
+        <div class="projects-grid projects-grid-sm">
           <!-- Luna Glow -->
           <article class="project-card">
             <h3>Luna Glow Serum</h3>
@@ -211,8 +252,8 @@
             <h3>Cotswold Trails</h3>
             <p class="project-type">Travel Landing Page • EN / TR UI</p>
             <p class="project-desc">
-              Travel landing page focused on UK villages, combining featured destinations,
-              rental tips and a simple email capture section for cozy guides.
+              Travel landing page focused on UK villages, combining featured destinations, rental
+              tips and a simple email capture section for cozy guides.
             </p>
             <div class="project-links">
               <a href="https://myrrinvalea.github.io/cotswolds/" target="_blank" class="btn small">
@@ -220,6 +261,73 @@
               </a>
             </div>
           </article>
+
+          <!-- Design Stories -->
+          <article class="project-card">
+            <h3>Design Stories</h3>
+            <p class="project-type">Minimal Blog Concept</p>
+            <p class="project-desc">
+              A minimal blog-style layout for design case studies, focusing on large typography,
+              breathing space and calm reading rhythm.
+            </p>
+            <div class="project-links">
+              <a href="https://myrrinvalea.github.io/design-stories/" target="_blank" class="btn small">
+                Live Demo
+              </a>
+              <a href="https://github.com/myrrinvalea/design-stories" target="_blank" class="btn ghost small">
+                View Code
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG PREVIEW -->
+    <section id="blog" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Writing &amp; Blog</h2>
+          <p>
+            I document my journey from healthcare systems to frontend development, and share notes
+            on learning, UI/UX and building a calm, international career.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <h3>From Healthcare Systems to Frontend</h3>
+            <p class="blog-meta">Journey • Personal Story</p>
+            <p class="blog-excerpt">
+              How working in patient registration and hospital information systems shaped the way I
+              think about structure, clarity and user needs in design.
+            </p>
+            <a href="blog.html#journey" class="blog-link">Read post</a>
+          </article>
+
+          <article class="blog-card">
+            <h3>Designing Calm Interfaces</h3>
+            <p class="blog-meta">UI/UX • Principles</p>
+            <p class="blog-excerpt">
+              Notes on spacing, typography and pacing — and why “calm” interfaces matter for people
+              who already live in very loud systems.
+            </p>
+            <a href="blog.html#calm-interfaces" class="blog-link">Read post</a>
+          </article>
+
+          <article class="blog-card">
+            <h3>Building a Portfolio for Global Work</h3>
+            <p class="blog-meta">Career • Global Talent</p>
+            <p class="blog-excerpt">
+              Thoughts on creating a portfolio that speaks to international clients and future
+              relocation plans in the UK and Europe.
+            </p>
+            <a href="blog.html#portfolio-global" class="blog-link">Read post</a>
+          </article>
+        </div>
+
+        <div class="blog-more">
+          <a href="blog.html" class="btn ghost small">See all posts</a>
         </div>
       </div>
     </section>
