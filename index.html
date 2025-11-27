@@ -1,356 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Myrrin Valea | Frontend Developer</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --bg:#0f0a1f;
-  --bg2:#17122b;
-  --text:#F5F3FF;
-  --muted:#bfbad9;
-  --gold:#C6A664;
-  --accent:#b892ff;
-  --card:#221a3d;
-  --shadow:rgba(0,0,0,.35);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:"Poppins",sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  scroll-behavior:smooth;
-}
-
-/* HEADER */
-header{
-  text-align:center;
-  padding:4rem 1rem 2rem;
-  background:linear-gradient(135deg,rgba(184,146,255,0.3),rgba(198,166,100,0.3));
-}
-.logo{
-  font-family:"Cinzel",serif;
-  color:var(--gold);
-  font-size:1.8rem;
-  letter-spacing:3px;
-}
-h1{margin:.3rem 0 .4rem;}
-header p{color:var(--muted);margin-bottom:1.2rem;}
-nav a{
-  display:inline-block;
-  margin:0 .5rem;
-  padding:.6rem 1rem;
-  color:var(--text);
-  text-decoration:none;
-  font-weight:600;
-  border-radius:10px;
-  transition:background .25s,transform .2s;
-}
-nav a:hover{
-  background:rgba(255,255,255,.1);
-  transform:translateY(-2px);
-}
-
-/* SECTIONS */
-section{padding:3rem 10%;background:var(--bg2);}
-section h2{margin-bottom:1rem;color:var(--gold);font-size:1.8rem;}
-section p{color:var(--muted);}
-
-/* PROJECT CARDS */
-.project{
-  background:var(--card);
-  margin:1.2rem 0;
-  padding:1.3rem 1.5rem;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.05);
-  box-shadow:0 12px 30px var(--shadow);
-  transition:transform .25s,box-shadow .25s,border-color .25s;
-}
-.project:hover{
-  transform:translateY(-5px);
-  box-shadow:0 20px 45px var(--shadow);
-  border-color:rgba(198,166,100,.35);
-}
-.project h3{color:var(--accent);margin-bottom:.5rem;}
-.actions{
-  margin-top:.9rem;
-  display:flex;
-  flex-wrap:wrap;
-  gap:.6rem;
-}
-.btn{
-  padding:.55rem .9rem;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
-  transition:transform .2s,box-shadow .25s,background .25s,color .25s,border-color .25s;
-}
-.btn-primary{
-  background:var(--gold);
-  color:#1b1b1b;
-  box-shadow:0 8px 22px var(--shadow);
-}
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 14px 36px var(--shadow);
-}
-.btn-ghost{
-  border:1px solid rgba(255,255,255,.2);
-  color:var(--text);
-}
-.btn-ghost:hover{
-  border-color:rgba(198,166,100,.45);
-  color:var(--gold);
-  transform:translateY(-2px);
-}
-
-/* CONTACT */
-#contact a{color:var(--gold);text-decoration:none;}
-#contact a:hover{text-decoration:underline;}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:1.4rem;
-  background:linear-gradient(90deg,#1a1230,#241a3d);
-  color:var(--muted);
-  font-size:.9rem;
-}
-footer .socials{margin-top:.6rem;}
-footer .socials a{
-  color:var(--muted);
-  margin:0 .75rem;
-  text-decoration:none;
-  font-weight:600;
-}
-footer .socials a:hover{color:var(--gold);}
-  /* ----- Projects Bölümü ----- */
-.project {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
-  padding: 16px;
-  margin: 18px 0;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
-}
-.project-inner {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 16px;
-  align-items: center;
-}
-.thumb {
-  width: 100%;
-  height: 150px;
-  border-radius: 14px;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .35);
-}
-.details h3 {
-  margin: .2rem 0 .4rem;
-}
-.project-active:hover {
-  border-color: rgba(198, 166, 100, .4);
-  box-shadow: 0 22px 60px rgba(0, 0, 0, .35);
-}
-@media (max-width: 900px) {
-  .project-inner {
-    grid-template-columns: 1fr;
-  }
-  .thumb {
-    height: 180px;
-  }
-}
-/* === LOGO GÖRSELİ === */
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 60px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-  transform: scale(1.1);
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <title>Myrrin Valea | Frontend Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Myrrin Valea — Frontend Developer & UI/UX Designer building modern, responsive and user-focused websites."
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="logo-mark">MV</span>
+        <span class="logo-text">Myrrin Valea</span>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <div class="logo">
-    <img src="logo.png" alt="MV Logo">
-    <h1>Myrrin Valea</h1>
-  </div>
-</header>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-kicker">Frontend Developer & UI/UX Designer</p>
+          <h1>Crafting calm, modern web experiences.</h1>
+          <p class="hero-subtitle">
+            I design and build responsive, user-focused websites using HTML, CSS and a growing
+            JavaScript toolkit. With 8+ years of experience in healthcare systems,
+            I combine structure and empathy to create clear, reliable interfaces.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="https://github.com/myrrinvalea" target="_blank" class="btn ghost">
+              GitHub Profile
+            </a>
+          </div>
+          <p class="hero-meta">
+            Based in Türkiye • Open to remote work • Exploring UK/EU opportunities
+          </p>
+        </div>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Hello, I'm Myrrin — a passionate <strong>Front-End Developer</strong> and <strong>UI/UX Designer</strong>.
-    I build modern, responsive, and user-focused websites using HTML, CSS, and JavaScript.
-    With 8+ years of experience in healthcare systems, I combine technical precision with creative vision to craft seamless digital experiences.
-    Currently working as a <strong>freelance developer</strong> under my brand <em>Myrrin Valea Creative Studio</em>.
-  </p>
-</section>
-<section id="current-focus">
-  <h2>My Current Focus</h2>
-  <p>
-    I’m currently focusing on building <strong>front-end projects</strong> and <strong>UI/UX design demos</strong>
-    to expand my freelance portfolio. My goal is to deliver visually engaging,
-    accessible, and high-performing websites that bring ideas to life.
-  </p>
-</section>
-
-
-<section id="projects" class="reveal">
-  <h2>Projects</h2>
-
-  <!-- Café Aether -->
-  <div class="project project-active">
-    <div class="project-inner">
-      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1400&auto=format&fit=crop');"></div>
-      <div class="details">
-        <h3>Café Aether</h3>
-        <p>Elegant restaurant landing page built with HTML, CSS, and subtle animations.</p>
-        <div class="project">
-  <h3>Freelancer Studio</h3>
-  <p>Clean and modern web studio design.</p>
-  <a class="btn btn-primary"
-     href="https://myrrinvalea.github.io/freelancer-studio/"
-     target="_blank" rel="noopener">View Project →</a>
-</div>
-
-        <div class="actions">
-          <a class="btn btn-primary"
-             href="https://myrrinvalea.github.io/cafe-aether/"
-             target="_blank" rel="noopener">View Project →</a>
-          <a class="btn btn-ghost"
-             href="https://github.com/myrrinvalea/cafe-aether"
-             target="_blank" rel="noopener">View Code</a>
+        <div class="hero-panel">
+          <div class="hero-card">
+            <p class="hero-card-label">Current Focus</p>
+            <ul class="hero-list">
+              <li>Landing pages for small brands</li>
+              <li>Portfolio & studio websites</li>
+              <li>UI/UX demo projects and case studies</li>
+            </ul>
+            <p class="hero-card-footer">
+              Working under my brand  
+              <span class="brand">Myrrin Valea Creative Studio</span>.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-<!-- Luna Atelier -->
-<div class="project">
-  <div class="project-inner">
-    <div class="thumb"
-         style="background-image:url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1480');">
-    </div>
+    </section>
 
-    <div class="details">
-      <h3>Luna Atelier</h3>
-      <p>Minimal and elegant boutique fashion landing page with soft UI and clean layout.</p>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container two-column">
+        <div>
+          <h2>About Me</h2>
+          <p>
+            Hello, I'm <strong>Myrrin</strong> — a frontend developer and UI/UX designer who loves
+            clean layouts, thoughtful typography and calm interfaces. I build modern, responsive and
+            accessible websites that feel both aesthetic and easy to use.
+          </p>
+          <p>
+            I have <strong>8+ years of experience in healthcare systems</strong>, working with
+            complex processes, patient data and information flows. This background helps me design
+            interfaces that are structured, reliable and user-friendly.
+          </p>
+          <p>
+            Right now, I’m focused on building a strong portfolio for freelance work — especially
+            landing pages, product sites and creative studio pages.
+          </p>
+        </div>
 
-      <div class="actions">
-        <a class="btn btn-primary"
-           href="https://myrrinvalea.github.io/luna-atelier/"
-           target="_blank" rel="noopener">View Project →</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- Design Stories -->
-  <div class="project">
-    <div class="project-inner">
-      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1400&auto=format&fit=crop');"></div>
-      <div class="details">
-        <h3>Design Stories</h3>
-        <p>Minimal blog concept created to showcase design case studies and storytelling layouts.</p>
-        <div class="actions">
-          <a class="btn btn-primary"
-             href="https://myrrinvalea.github.io/design-stories/"
-             target="_blank" rel="noopener">View Project →</a>
-          <a class="btn btn-ghost"
-             href="https://github.com/myrrinvalea/design-stories"
-             target="_blank" rel="noopener">View Code</a>
+        <div class="tag-grid">
+          <div class="tag-card">
+            <h3>Tech</h3>
+            <p>HTML, CSS, basic JavaScript</p>
+          </div>
+          <div class="tag-card">
+            <h3>Design</h3>
+            <p>UI/UX, layout, spacing, typography</p>
+          </div>
+          <div class="tag-card">
+            <h3>Soft Skills</h3>
+            <p>Healthcare workflows, empathy, detail-oriented</p>
+          </div>
+          <div class="tag-card">
+            <h3>Next Steps</h3>
+            <p>Deeper JavaScript, components, animations</p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Portfolio UI -->
-  <div class="project">
-    <div class="project-inner">
-      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop');"></div>
-      <div class="details">
-        <h3>Portfolio UI</h3>
-        <p>A responsive and modern portfolio template built with HTML, CSS and JavaScript.</p>
-        <div class="actions">
-          <a class="btn btn-primary"
-             href="https://myrrinvalea.github.io/portfolio-ui/"
-             target="_blank" rel="noopener">View Project →</a>
-          <a class="btn btn-ghost"
-             href="https://github.com/myrrinvalea/portfolio-ui"
-             target="_blank" rel="noopener">View Code</a>
+    <!-- PROJECTS -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Selected Projects</h2>
+          <p>
+            A mix of landing pages, portfolio concepts and product demos. Each project focuses on
+            clear hierarchy, spacing and a simple user flow.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Café Aether -->
+          <article class="project-card">
+            <h3>Café Aether</h3>
+            <p class="project-type">Landing Page • HTML &amp; CSS</p>
+            <p class="project-desc">
+              Modern coffee & pastry landing page with a cozy, minimal layout and clear sections
+              for menu, story and visit details.
+            </p>
+            <div class="project-links">
+              <a href="https://myrrinvalea.github.io/cafe-aether/" target="_blank" class="btn small">
+                Live Demo
+              </a>
+              <a href="https://github.com/myrrinvalea/cafe-aether" target="_blank" class="btn ghost small">
+                View Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Freelancer Studio -->
+          <article class="project-card">
+            <h3>Freelancer Studio</h3>
+            <p class="project-type">Studio Website • HTML &amp; CSS</p>
+            <p class="project-desc">
+              Clean and modern web studio layout explaining services, selected work and a simple
+              contact flow for potential clients.
+            </p>
+            <div class="project-links">
+              <a href="https://myrrinvalea.github.io/freelancer-studio/" target="_blank" class="btn small">
+                Live Demo
+              </a>
+            </div>
+          </article>
+
+          <!-- Design Stories -->
+          <article class="project-card">
+            <h3>Design Stories</h3>
+            <p class="project-type">Minimal Blog Concept</p>
+            <p class="project-desc">
+              A minimal blog-style layout for design case studies, focusing on large typography,
+              breathing space and calm reading rhythm.
+            </p>
+            <div class="project-links">
+              <a href="https://myrrinvalea.github.io/design-stories/" target="_blank" class="btn small">
+                Live Demo
+              </a>
+              <a href="https://github.com/myrrinvalea/design-stories" target="_blank" class="btn ghost small">
+                View Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Portfolio UI -->
+          <article class="project-card">
+            <h3>Portfolio UI</h3>
+            <p class="project-type">Portfolio Template • HTML, CSS &amp; JS</p>
+            <p class="project-desc">
+              A compact portfolio template with hero, work grid, about and contact sections —
+              built to showcase consistent spacing and subtle motion.
+            </p>
+            <div class="project-links">
+              <a href="https://myrrinvalea.github.io/portfolio-ui/" target="_blank" class="btn small">
+                Live Demo
+              </a>
+              <a href="https://github.com/myrrinvalea/portfolio-ui" target="_blank" class="btn ghost small">
+                View Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Luna Glow -->
+          <article class="project-card">
+            <h3>Luna Glow Serum</h3>
+            <p class="project-type">Product Page • TR &amp; EN</p>
+            <p class="project-desc">
+              Landing page concept for a skincare serum, with product details, benefits, how-to
+              steps and customer reviews in both Turkish and English.
+            </p>
+            <div class="project-links project-links-multi">
+              <a href="https://myrrinvalea.github.io/luna-glow-elegant-tr.html" target="_blank" class="btn small">
+                Luna Glow (TR)
+              </a>
+              <a href="https://myrrinvalea.github.io/luna-glow-elegant-en.html" target="_blank" class="btn ghost small">
+                Luna Glow (EN)
+              </a>
+            </div>
+          </article>
+
+          <!-- Cotswold Trails -->
+          <article class="project-card">
+            <h3>Cotswold Trails</h3>
+            <p class="project-type">Travel Landing Page • EN / TR UI</p>
+            <p class="project-desc">
+              Travel landing page focused on UK villages, combining featured destinations,
+              rental tips and a simple email capture section for cozy guides.
+            </p>
+            <div class="project-links">
+              <a href="https://myrrinvalea.github.io/cotswolds/" target="_blank" class="btn small">
+                Live Demo
+              </a>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contact-layout">
+        <div>
+          <h2>Let’s work together</h2>
+          <p>
+            Need a clean landing page, a small brand site or a minimal portfolio?  
+            Tell me about your project and I’ll get back to you.
+          </p>
+          <p class="contact-email">
+            Email: <a href="mailto:myrrinvalea.design@gmail.com">myrrinvalea.design@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <p class="contact-label">Elsewhere</p>
+          <ul>
+            <li>
+              <a href="https://github.com/myrrinvalea" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/myrrinvalea" target="_blank">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Myrrin Valea — Frontend Developer &amp; UI/UX Designer</p>
     </div>
-  </div>
-</section>
-
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Let’s connect! You can reach me at <a href="mailto:myrrinvalea.design@gmail.com">myrrinvalea.design@gmail.com</a> or find me on my social links below.</p>
-</section>
-<section id="projects" style="padding:60px 0; text-align:center; background:#faf7f4;">
-  <h2 style="font-family:'Playfair Display',serif; font-size:36px; margin-bottom:20px;">Portfolyo Projeleri</h2>
-  <p style="color:#666; margin-bottom:30px;">Aşağıda son yaptığım projelerden birini görebilirsiniz 👇</p>
-  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-    <a href="luna-glow-elegant-tr.html" class="btn" style="padding:14px 24px; background:#111; color:white; border-radius:10px; text-decoration:none;">Luna Glow (TR)</a>
-    <a href="luna-glow-elegant-en.html" class="btn" style="padding:14px 24px; background:#fff; color:#111; border:1px solid #ccc; border-radius:10px; text-decoration:none;">Luna Glow (EN)</a>
-  </div>
-</section>
-<!-- Cotswolds Project Card -->
-<div class="project-card" style="max-width: 600px; margin: 2rem auto; text-align: center;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Arlington_Row_Bibury.jpg"
-       alt="Cotswolds Village"
-       style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-  <h3 style="margin-top: 1rem;">Cotswolds Travel Demo</h3>
-  <p style="font-size: 0.95rem; color: #ccc;">A demo landing page inspired by the English countryside — Bourton-on-the-Water, Bibury, and Broadway Tower.</p>
-  <a href="https://myrrinvalea.github.io/cotswolds/" target="_blank"
-     style="display: inline-block; margin-top: 0.8rem; padding: 0.6rem 1.2rem; background-color: #1a1a2e; color: #fff; border-radius: 6px; text-decoration: none; transition: 0.3s;">
-     View Project →
-  </a>
-</div>
-
-
-<footer>
-  <p>© 2025 Myrrin Valea</p>
-  <div class="socials">
-    <a href="https://github.com/myrrinvalea" target="_blank">🐙 GitHub</a>
-    <a href="https://www.linkedin.com/in/myrrinvalea" target="_blank">💼 LinkedIn</a>
-    <a href="mailto:myrrinvalea.design@gmail.com">✉️ Email</a>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
