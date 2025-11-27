@@ -307,6 +307,21 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.section-subheader {
+  margin: 2.5rem 0 1.5rem;
+}
+
+.section-subheader h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.2rem;
+}
+
+.section-subheader p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 /* ABOUT */
 
 .two-column {
@@ -351,12 +366,43 @@ a:hover {
   color: var(--muted);
 }
 
+/* SERVICES */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  padding: 1.05rem 1.1rem;
+  border-radius: var(--radius-lg);
+  background: rgba(8, 12, 31, 0.96);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.service-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.service-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 /* PROJECTS */
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.8rem;
+}
+
+.projects-grid-sm {
+  gap: 1.5rem;
 }
 
 .project-card {
@@ -399,6 +445,52 @@ a:hover {
 .project-links-multi {
   flex-direction: column;
   align-items: flex-start;
+}
+
+/* BLOG PREVIEW */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.blog-card {
+  padding: 1.1rem 1.1rem;
+  border-radius: var(--radius-lg);
+  background: rgba(8, 12, 31, 0.96);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.blog-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.02rem;
+}
+
+.blog-meta {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.blog-excerpt {
+  margin: 0.55rem 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.blog-link {
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.blog-more {
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* CONTACT */
@@ -487,7 +579,9 @@ a:hover {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .projects-grid {
+  .projects-grid,
+  .blog-grid,
+  .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -510,7 +604,9 @@ a:hover {
     padding-top: 3.2rem;
   }
 
-  .projects-grid {
+  .projects-grid,
+  .blog-grid,
+  .services-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
